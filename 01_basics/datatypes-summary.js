@@ -37,3 +37,20 @@ console.log(typeof anotherid);
 
 //link to study 
 //https://tc39.es/ecma262/multipage/abstract-operations.html
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// stack(primitive) vs heap(non-primitive)
+
+let myyoutubename='diptipathak.com';
+let anothername=myyoutubename;
+anothername="chai aur code";
+console.log(anothername);
+console.log(myyoutubename);
+let userone={
+    email:"diptipathak.com",
+    upi:"user@upi"
+}
+let usertwo=userone;
+usertwo.email="divyapathak.com"
+console.log(userone.email);
+console.log(usertwo.email);
