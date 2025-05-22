@@ -42,3 +42,28 @@ console.log(Object.values(tinder));
 console.log(Object.entries(tinder));
 
 console.log(tinder.hasOwnProperty("name"));//output-true
+
+const course={
+    courseName:"javascript",
+    price:999,
+    courseInstructor:"dipti",
+}
+//course.courseinstructor
+const{courseInstructor:instructor}=course;//output-dipti
+//console.log(courseInstructor);
+console.log(instructor);//output-dipti
+
+// {
+//     "name":"dipti",
+//     "age":23,
+//     "courseName":"javascript",
+//     "price":999,
+// }
+//it is an example of json object(api)
+
+// [
+//     {},
+//     {},
+// ]
+//it is an example of json array(api)
+
