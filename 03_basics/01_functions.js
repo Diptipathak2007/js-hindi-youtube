@@ -35,3 +35,33 @@ function loginusermessage(username){
 }
 //console.log(loginusermessage("dipti"));
 console.log(loginusermessage());//output is Welcome undefined
+
+console.log("-----------------");
+
+
+function calculatecartprice(...num1){//rest or spread operator
+    return num1;
+}
+function calculatecartprice2(val1,val2,...num1){//rest or spread operator
+    return num1;
+}
+console.log(calculatecartprice(5));
+console.log(calculatecartprice(200,500,600,912));
+console.log(calculatecartprice2(200,500,600,912));
+const user={
+    username:"dipti",
+    price: 500,
+
+}
+function handleobject(obj){
+    console.log(`username is ${obj.username} and price is ${obj.price}`);
+   
+}
+//handleobject(user);
+handleobject({username:"dipti",price:500});//object can be passed directly
+const mynewarray = [1,2,3,4,5];
+function returnsecondelement(arr){
+    return arr[1];
+}
+console.log(returnsecondelement(mynewarray));//output is 2
+console.log(returnsecondelement([1,2,3,4,5]));//output is 2
