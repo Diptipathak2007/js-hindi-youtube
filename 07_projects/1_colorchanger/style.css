@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Light Theme */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --accent: #667eea;
+  --accent-hover: #5a67d8;
+  --border: #e2e8f0;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --card-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1a202c;
+  --bg-secondary: #2d3748;
+  --text-primary: #f7fafc;
+  --text-secondary: #e2e8f0;
+  --accent: #9f7aea;
+  --accent-hover: #805ad5;
+  --border: #4a5568;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --card-bg: #2d3748;
+}
+
+[data-theme="sunset"] {
+  --bg-primary: #fff5f5;
+  --bg-secondary: #fed7d7;
+  --text-primary: #742a2a;
+  --text-secondary: #9c4221;
+  --accent: #f56565;
+  --accent-hover: #e53e3e;
+  --border: #feb2b2;
+  --shadow: rgba(245, 101, 101, 0.2);
+  --card-bg: #ffffff;
+}
+
+[data-theme="ocean"] {
+  --bg-primary: #f0f9ff;
+  --bg-secondary: #e0f2fe;
+  --text-primary: #0c4a6e;
+  --text-secondary: #075985;
+  --accent: #0ea5e9;
+  --accent-hover: #0284c7;
+  --border: #7dd3fc;
+  --shadow: rgba(14, 165, 233, 0.2);
+  --card-bg: #ffffff;
+}
+
+[data-theme="forest"] {
+  --bg-primary: #f0fdf4;
+  --bg-secondary: #dcfce7;
+  --text-primary: #14532d;
+  --text-secondary: #166534;
+  --accent: #22c55e;
+  --accent-hover: #16a34a;
+  --border: #86efac;
+  --shadow: rgba(34, 197, 94, 0.2);
+  --card-bg: #ffffff;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(
+    135deg,
+    var(--bg-primary) 0%,
+    var(--bg-secondary) 100%
+  );
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  padding: 20px;
+}
+
+.container {
+  max-width: 500px;
+  width: 100%;
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 40px var(--shadow);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, var(--accent), var(--accent-hover));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.theme-switcher {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.theme-btn {
+  background: var(--bg-secondary);
+  border: 2px solid var(--border);
+  border-radius: 15px;
+  padding: 20px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px var(--shadow);
+}
+
+.theme-btn.active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: white;
+  transform: scale(1.05);
+}
+
+.theme-btn.active::before {
+  content: "✓";
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.theme-icon {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.theme-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.demo-content {
+  background: var(--bg-secondary);
+  border-radius: 15px;
+  padding: 25px;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.demo-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--text-primary);
+}
+
+.demo-text {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.demo-button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.demo-button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.heart {
+  color: var(--accent);
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .theme-switcher {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

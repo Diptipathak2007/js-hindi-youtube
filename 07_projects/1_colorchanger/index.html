@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Theme Switcher</title>
+    <link rel="stylesheet" href="style.css">
+    
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Theme Switcher</h1>
+            <p class="subtitle">Choose your favorite color theme</p>
+        </div>
+
+        <div class="theme-switcher">
+            <button class="theme-btn active" data-theme="light">
+                <span class="theme-icon">☀️</span>
+                <span class="theme-name">Light</span>
+            </button>
+            <button class="theme-btn" data-theme="dark">
+                <span class="theme-icon">🌙</span>
+                <span class="theme-name">Dark</span>
+            </button>
+            <button class="theme-btn" data-theme="sunset">
+                <span class="theme-icon">🌅</span>
+                <span class="theme-name">Sunset</span>
+            </button>
+            <button class="theme-btn" data-theme="ocean">
+                <span class="theme-icon">🌊</span>
+                <span class="theme-name">Ocean</span>
+            </button>
+            <button class="theme-btn" data-theme="forest">
+                <span class="theme-icon">🌲</span>
+                <span class="theme-name">Forest</span>
+            </button>
+        </div>
+
+        <div class="demo-content">
+            <h3 class="demo-title">Welcome to the Theme Switcher!</h3>
+            <p class="demo-text">
+                This is a demonstration of how different themes affect the appearance of your content. 
+                Try switching between themes to see the smooth transitions and beautiful color combinations.
+            </p>
+            <button class="demo-button" onclick="showMessage()">Click Me!</button>
+        </div>
+
+        <div class="footer">
+            Made with 💜 by Dipti | DOM Project 1
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+    
+</body>
+</html>
