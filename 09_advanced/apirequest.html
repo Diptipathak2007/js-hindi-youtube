@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+<body style="background-color: black;color: aliceblue;">
+    0: UNSENT
+    - The request has not been initialized. 
+    - The open() method has not yet been called.
+
+    1: OPENED
+    - The request has been set up.
+    - The send() method has not yet been called.
+
+    2: HEADERS_RECEIVED
+    - The request has been sent and the headers have been received.
+    - The response status and headers are now available.
+
+    3: LOADING
+    - The response is being downloaded.
+    - responseText holds partial data as it is being received.
+
+    4: DONE
+    - The request is complete and the response is fully received.
+    - The response can be processed.
+</body>
+<script>
+    const requrl="https://api.github.com/users/hiteshchoudhary"
+    const xhr=new XMLHttpRequest();
+    xhr.open('GET', requrl);
+    xhr.onreadystatechange=function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState==4){
+           const data=JSON.parse(this.responseText);
+           console.log(typeof data);// string(earlier) hence it was returning undefined then we converted it into JSON
+           console.log(data.followers);
+        
+        //to display the image
+        //    const img = document.createElement('img');
+        //    img.src = data.avatar_url;
+        //    img.alt = 'Hitesh Choudhary';
+        //    img.style.width = '100px'; // Adjust size as needed
+        //    document.body.appendChild(img);
+        }
+    }
+    //console.log(xhr.readyState); 
+    
+    xhr.send();
+</script>
+</html>
